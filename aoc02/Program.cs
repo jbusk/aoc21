@@ -1,6 +1,7 @@
 ﻿
 using (var sr = new StreamReader("input.txt"))
 {
+    int aim = 0;
     int hpos = 0;
     int depth = 0;
     while (!sr.EndOfStream)
@@ -12,12 +13,13 @@ using (var sr = new StreamReader("input.txt"))
         {
             case "forward":
                 hpos += value;
+                depth += aim * value;
                 break;
             case "down":
-                depth += value;
+                aim += value;
                 break;
             case "up":
-                depth -= value;
+                aim -= value;
                 break;
             default:
                 break;
