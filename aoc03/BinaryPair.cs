@@ -49,7 +49,20 @@ namespace aoc03
 
         public int Max()
         {
-            if (Zero > One)
+            if (One >= Zero)
+                return 1;
+            else
+                return 0;
+        }
+
+        public int Oxy()
+        {
+            return Max();
+        }
+
+        public int Co2()
+        {
+            if (Zero <= One)
                 return 0;
             else
                 return 1;
