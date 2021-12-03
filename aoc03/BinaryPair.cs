@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace aoc03
+﻿namespace aoc03
 {
     internal class BinaryPair
     {

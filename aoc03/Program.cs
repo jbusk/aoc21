@@ -1,7 +1,5 @@
 ﻿using aoc03;
 
-
-
 int valuelength = 0;
 List<string> values = new();
 using (var sr = new StreamReader("input.txt"))
@@ -33,7 +31,6 @@ for (int i = 0; i < valuelength; i++)
 }
 
 Console.WriteLine("Part 2: " + toBase10(oxy.First()) * toBase10(co2.First()));
-
 
 List<BinaryPair> GetBinaryPairs(List<string> values)
 {
