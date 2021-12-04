@@ -34,7 +34,7 @@ foreach (var call in calls.Split(',').Select(f => int.Parse(f)))
             }
             if (boards.Count(b => !b.Won) == 0)
             {
-                Console.WriteLine($"Part 1: {sum} * {call} = {sum * call}");
+                Console.WriteLine($"Part 2: {sum} * {call} = {sum * call}");
                 Console.WriteLine(board);
             }
         }
