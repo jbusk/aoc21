@@ -18,12 +18,9 @@ using (var sr = new StreamReader("input.txt"))
 }
 
 bool first_has_won = false;
-BingoBoard? last_winning = null;
-int last_winning_sum = 0;
-int last_winning_call = 0;
-foreach (var callstr in calls.Split(','))
+
+foreach (var call in calls.Split(',').Select(f => int.Parse(f)))
 {
-    int call = int.Parse(callstr);
     foreach (var board in boards)
     {
         if (!board.Won && board.Call(call))
@@ -35,11 +32,11 @@ foreach (var callstr in calls.Split(','))
                 Console.WriteLine(board);
                 first_has_won = true;
             }
-            last_winning = board;
-            last_winning_call = call;
-            last_winning_sum = sum;
+            if (boards.Count(b => !b.Won) == 0)
+            {
+                Console.WriteLine($"Part 1: {sum} * {call} = {sum * call}");
+                Console.WriteLine(board);
+            }
         }
     }
 }
-Console.WriteLine($"Part 2: {last_winning_sum} * {last_winning_call} = {last_winning_sum * last_winning_call}");
-Console.WriteLine(last_winning);
