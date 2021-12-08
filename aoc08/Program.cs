@@ -1,6 +1,4 @@
-﻿using System.Linq;
-
-var file = File.ReadAllText("input.txt").Split('\n').Select(x => x.Split(" | "));
+﻿var file = File.ReadAllText("input.txt").Split('\n').Select(x => x.Split(" | "));
 var sum = 0;
 foreach (var line in file)
 {
