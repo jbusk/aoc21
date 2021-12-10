@@ -13,14 +13,8 @@ using (var sr = new StreamReader("input.txt"))
             switch (item)
             {
                 case '(':
-                    stack.Push(item);
-                    break;
                 case '[':
-                    stack.Push(item);
-                    break;
                 case '{':
-                    stack.Push(item);
-                    break;
                 case '<':
                     stack.Push(item);
                     break;
