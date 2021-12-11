@@ -11,10 +11,10 @@ using (var sr = new StreamReader("input.txt"))
 }
 
 int pt1flashes = 0;
-
+int pt2step = 0;
 stringify_octopi();
 
-for (int step = 0; step < 100; step++)
+for (int step = 0; step < 1000; step++)
 {
     octopi.ForEach(x => x.Increase());
 
@@ -102,7 +102,14 @@ for (int step = 0; step < 100; step++)
 
         }
     }
-    pt1flashes += octopi.Count(o => o.Flashed);
+    int flashing = octopi.Count(o => o.Flashed);
+    if (step < 100)
+        pt1flashes += flashing;
+    if (flashing == 100)
+    {
+        pt2step = step + 1;
+        break;
+    }
     //Console.WriteLine($"After step {step + 1}:");
     //if ((step + 1) % 10 == 0)
     //stringify_octopi();
@@ -111,7 +118,7 @@ for (int step = 0; step < 100; step++)
 
 }
 Console.WriteLine("Part 1: " + pt1flashes);
-
+Console.WriteLine("Part 2: " + pt2step);
 void stringify_octopi()
 {
     int num = 0;
